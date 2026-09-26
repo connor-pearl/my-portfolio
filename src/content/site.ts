@@ -1,5 +1,7 @@
 export const site = {
   name: "Connor Brennan",
+  givenName: "Connor",
+  familyName: "Brennan",
   shortName: "CB",
   role: "AI Full Stack Software Engineer",
   location: "Cali, Colombia",
@@ -7,8 +9,12 @@ export const site = {
   email: "connor.brennan42@outlook.com",
   phone: "+57 602 345 6789",
   years: 7,
+  editionYear: 2026,
+  focus: "Production AI",
   summary:
     "AI Full Stack Software Engineer with 7 years of experience building scalable SaaS platforms, backend services, APIs, and AI-powered systems. Builds reliable systems that improve performance, automate workflows, and support production applications at scale.",
+  coverLead:
+    "Builds production AI systems, APIs, and SaaS platforms that hold under load.",
 } as const;
 
 export const metrics = [
@@ -159,6 +165,21 @@ export const education = {
   period: "2014 — 2018",
   place: "College Green, Dublin 2, Ireland",
 } as const;
+
+export const coverFacts = [
+  {
+    label: "Tenure",
+    value: `${String(site.years).padStart(2, "0")} years`,
+  },
+  {
+    label: "Now",
+    value: experience[0].company,
+  },
+  {
+    label: "Focus",
+    value: site.focus,
+  },
+] as const;
 
 export const plates = [
   { id: "cover", index: "00", label: "Cover" },

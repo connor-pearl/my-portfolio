@@ -27,6 +27,7 @@
 :root {
   color-scheme: dark;
   --frame: clamp(1rem, 3vw, 2.25rem);
+  --index-bar: 2.75rem;
 }
 
 * {
@@ -130,15 +131,53 @@ a {
 }
 
 .contour-shift {
-  animation: contour-drift 48s linear infinite;
+  animation: contour-drift 64s linear infinite;
 }
 
 @keyframes contour-drift {
   from {
-    transform: translate3d(0, 0, 0) scale(1.04);
+    transform: translate3d(0, 0, 0) scale(1.03);
   }
   to {
-    transform: translate3d(-3%, -2%, 0) scale(1.12);
+    transform: translate3d(-2%, -1.5%, 0) scale(1.08);
+  }
+}
+
+.cover-title {
+  font-size: clamp(2.85rem, 12vw, 11.5rem);
+}
+
+.cover-rise {
+  animation: cover-rise 1.05s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (max-height: 740px) {
+  .cover-title {
+    font-size: clamp(2.6rem, 9vw, 7.5rem);
+  }
+
+  .cover-plate {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+
+.cover-rise-2 {
+  animation-delay: 0.12s;
+}
+
+.cover-rise-3 {
+  animation-delay: 0.24s;
+}
+
+@keyframes cover-rise {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 16px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
   }
 }
 
@@ -181,7 +220,10 @@ a {
 
   .contour-shift,
   .pulse-node,
-  .dash-draw {
+  .dash-draw,
+  .cover-rise,
+  .cover-rise-2,
+  .cover-rise-3 {
     animation: none;
   }
 }

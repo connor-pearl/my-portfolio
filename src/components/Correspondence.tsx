@@ -56,7 +56,7 @@ export function Correspondence() {
 
       <footer className="relative mt-20 flex flex-wrap items-end justify-between gap-4 border-t border-rule pt-6">
         <p className="font-mono text-[10px] tracking-[0.22em] text-fog uppercase">
-          {site.name} · Atlas 01 · {new Date().getFullYear()}
+          {site.name} · Atlas 01 · {site.editionYear}
         </p>
         <p className="font-mono text-[10px] tracking-[0.18em] text-fog uppercase">
           No portraits · Cartographic edition
