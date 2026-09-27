@@ -36,7 +36,14 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: var(--index-bar);
   background: var(--color-ink);
+}
+
+@media (min-width: 64rem) {
+  html {
+    scroll-padding-top: 0;
+  }
 }
 
 body {
@@ -70,11 +77,44 @@ a {
   pointer-events: none;
   position: fixed;
   inset: 0;
-  z-index: 40;
+  z-index: 10;
   opacity: 0.22;
   mix-blend-mode: overlay;
   background-image: radial-gradient(rgba(236, 231, 219, 0.16) 0.5px, transparent 0.6px);
   background-size: 3px 3px;
+}
+
+.skip-link {
+  position: fixed;
+  top: 0.85rem;
+  left: var(--frame);
+  z-index: 50;
+  transform: translateY(-160%);
+  background: var(--color-paper);
+  color: var(--color-ink);
+  padding: 0.45rem 0.7rem;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  transform: none;
+}
+
+.skip-link:focus-visible {
+  outline: 1px dashed var(--color-copper);
+  outline-offset: 3px;
+}
+
+.atlas-strip {
+  scrollbar-width: none;
+}
+
+.atlas-strip::-webkit-scrollbar {
+  display: none;
 }
 
 .neatline {

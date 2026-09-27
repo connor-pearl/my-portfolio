@@ -6,7 +6,8 @@ export function CoverPlate() {
   return (
     <section
       id="cover"
-      className="cover-plate relative flex min-h-[calc(100svh-var(--index-bar))] flex-col justify-between overflow-hidden px-[var(--frame)] py-5 md:py-8 xl:min-h-[100svh] xl:py-10"
+      tabIndex={-1}
+      className="cover-plate relative flex min-h-[calc(100svh-var(--index-bar))] flex-col justify-between overflow-hidden px-[var(--frame)] py-5 md:py-8 lg:min-h-[100svh] lg:py-10"
     >
       <div className="absolute inset-0">
         <Image

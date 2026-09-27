@@ -1,8 +1,6 @@
 import { Outfit, Instrument_Serif, IBM_Plex_Mono } from "next/font/google";
 import type { Metadata } from "next";
-import { AtlasIndex } from "@/components/AtlasIndex";
-import { MobileIndex } from "@/components/MobileIndex";
-import { RegistrationMarks } from "@/components/RegistrationMarks";
+import { AtlasChrome } from "@/components/AtlasChrome";
 import { site } from "@/content/site";
 import "./globals.css";
 
@@ -41,16 +39,8 @@ export default function RootLayout({
       className={`${outfit.variable} ${instrument.variable} ${plex.variable}`}
     >
       <body className="font-sans">
-        <a
-          href="#cover"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-paper focus:px-3 focus:py-2 focus:text-ink"
-        >
-          Skip to cover
-        </a>
         <div className="grain" />
-        <RegistrationMarks />
-        <MobileIndex />
-        <AtlasIndex />
+        <AtlasChrome />
         {children}
       </body>
     </html>
