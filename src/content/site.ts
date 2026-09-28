@@ -18,12 +18,55 @@ export const site = {
 } as const;
 
 export const metrics = [
-  { value: "07", suffix: " yrs", label: "Building production software", note: "2018 — present" },
-  { value: "10k", suffix: "+", label: "Monthly active users served", note: "La Haus · GPT-4 systems" },
-  { value: "60", suffix: "%", label: "Operational efficiency gained", note: "LLM workflow automation" },
-  { value: "40", suffix: "%", label: "Latency reduced in production", note: "Cache · stream · prompt" },
-  { value: "35", suffix: "%", label: "Infrastructure cost lowered", note: "Architecture + optimization" },
+  {
+    id: "tenure",
+    index: "01.1",
+    target: 7,
+    format: "pad2",
+    suffix: " yrs",
+    label: "Building production software",
+    note: "2018 — present",
+  },
+  {
+    id: "users",
+    index: "01.2",
+    target: 10,
+    format: "plain",
+    suffix: "k+",
+    label: "Monthly active users served",
+    note: "La Haus · GPT-4 systems",
+  },
+  {
+    id: "efficiency",
+    index: "01.3",
+    target: 60,
+    format: "plain",
+    suffix: "%",
+    label: "Operational efficiency gained",
+    note: "LLM workflow automation",
+  },
+  {
+    id: "latency",
+    index: "01.4",
+    target: 40,
+    format: "plain",
+    suffix: "%",
+    label: "Latency reduced in production",
+    note: "Cache · stream · prompt",
+  },
+  {
+    id: "cost",
+    index: "01.5",
+    target: 35,
+    format: "plain",
+    suffix: "%",
+    label: "Infrastructure cost lowered",
+    note: "Architecture + optimization",
+  },
 ] as const;
+
+export const signalIntro =
+  "Production outcomes measured across deployed AI systems, platform services, and infrastructure work." as const;
 
 export const experience = [
   {

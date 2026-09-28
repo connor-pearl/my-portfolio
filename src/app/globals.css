@@ -241,6 +241,38 @@ a {
   animation: dash 18s ease-in-out infinite;
 }
 
+.signal-grid {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 40rem) {
+  .signal-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .signal-grid .signal-cell:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 64rem) {
+  .signal-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .signal-grid .signal-cell:last-child {
+    grid-column: auto;
+  }
+}
+
+.signal-cell {
+  min-height: 14rem;
+}
+
+.signal-value {
+  font-variant-numeric: tabular-nums;
+}
+
 @keyframes dash {
   0% {
     stroke-dashoffset: 420;
