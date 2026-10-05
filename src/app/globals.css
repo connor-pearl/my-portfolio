@@ -273,6 +273,59 @@ a {
   font-variant-numeric: tabular-nums;
 }
 
+.deployments-spine {
+  position: relative;
+}
+
+.deployments-meridian {
+  position: absolute;
+  top: 0.75rem;
+  bottom: 0.75rem;
+  left: 0.35rem;
+  width: 1px;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    var(--color-rule-strong) 8%,
+    var(--color-copper) 28%,
+    var(--color-rule-strong) 92%,
+    transparent
+  );
+}
+
+@media (min-width: 48rem) {
+  .deployments-meridian {
+    left: 7.7rem;
+  }
+}
+
+.deployments-node {
+  width: 0.55rem;
+  height: 0.55rem;
+  border: 1px solid var(--color-copper);
+  background: var(--color-ink);
+  transform: translateX(-0.12rem);
+}
+
+@media (min-width: 48rem) {
+  .deployments-node {
+    transform: translateX(0.35rem);
+  }
+}
+
+.deployments-node.is-current {
+  background: var(--color-copper);
+  box-shadow: 0 0 0 4px rgb(197 106 58 / 0.18);
+}
+
+.deployments-station.is-current {
+  background: linear-gradient(
+    90deg,
+    rgb(197 106 58 / 0.06),
+    transparent 42%
+  );
+}
+
 @keyframes dash {
   0% {
     stroke-dashoffset: 420;

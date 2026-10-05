@@ -68,14 +68,19 @@ export const metrics = [
 export const signalIntro =
   "Production outcomes measured across deployed AI systems, platform services, and infrastructure work." as const;
 
+export const deploymentsIntro =
+  "Three stations. Cali and Dublin. SaaS platforms, payment APIs, RAG pipelines, and production LLM systems." as const;
+
 export const experience = [
   {
     id: "la-haus",
     plate: "02.1",
+    current: true,
     role: "AI Full Stack Software Engineer",
     company: "La Haus",
     period: "2025 — Present",
     place: "Cali, Colombia",
+    station: "Active station",
     stack: ["GPT-4", "FastAPI", "Next.js", "TypeScript", "GCP", "LangChain", "LangGraph", "Pinecone", "Go", "PostgreSQL"],
     notes: [
       "Architected, deployed, and monitored production AI systems using GPT-4, FastAPI, Next.js, TypeScript, and GCP, serving 10,000+ monthly active users.",
@@ -88,10 +93,12 @@ export const experience = [
   {
     id: "psl",
     plate: "02.2",
+    current: false,
     role: "Senior Full Stack Software Engineer",
     company: "PSL Corp",
     period: "2022 — 2025",
     place: "Cali, Colombia",
+    station: "Prior station",
     stack: ["React", "Next.js", "Node.js", "Express", "PostgreSQL", "GraphQL", "MySQL", "CI/CD"],
     notes: [
       "Led development of enterprise SaaS applications using React, Next.js, Node.js, Express, and PostgreSQL, delivering performant frontend experiences and scalable backend services.",
@@ -105,10 +112,12 @@ export const experience = [
   {
     id: "evervault",
     plate: "02.3",
+    current: false,
     role: "Software Engineer",
     company: "Evervault",
     period: "2018 — 2022",
     place: "Dublin, Ireland",
+    station: "Origin station",
     stack: ["Python", "Django", "Flask", "Node.js", "React"],
     notes: [
       "Developed full-stack applications using Python (Django, Flask), Node.js, and React for internal and customer-facing systems.",
