@@ -73,20 +73,32 @@ export function Deployments() {
               </ul>
 
               <div className="mt-8 border-t border-rule pt-5">
-                <p className="kicker mb-3 text-fog">Stack legend</p>
-                <ul className="flex flex-wrap gap-x-3 gap-y-2">
-                  {job.stack.map((item, index) => (
-                    <li
-                      key={item}
-                      className="font-mono text-[11px] tracking-[0.08em] text-paper/75"
+                <div className="flex flex-wrap items-end justify-between gap-4">
+                  <div>
+                    <p className="kicker mb-3 text-fog">Stack legend</p>
+                    <ul className="flex flex-wrap gap-x-3 gap-y-2">
+                      {job.stack.map((item, index) => (
+                        <li
+                          key={item}
+                          className="font-mono text-[11px] tracking-[0.08em] text-paper/75"
+                        >
+                          {item}
+                          {index < job.stack.length - 1 ? (
+                            <span className="ml-3 text-copper/70">/</span>
+                          ) : null}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  {job.id === "la-haus" ? (
+                    <a
+                      href="/work/la-haus"
+                      className="shrink-0 border border-copper px-3 py-2 font-mono text-[10px] tracking-[0.2em] text-copper uppercase no-underline hover:bg-copper hover:text-ink"
                     >
-                      {item}
-                      {index < job.stack.length - 1 ? (
-                        <span className="ml-3 text-copper/70">/</span>
-                      ) : null}
-                    </li>
-                  ))}
-                </ul>
+                      Open case plate →
+                    </a>
+                  ) : null}
+                </div>
               </div>
             </article>
           </li>

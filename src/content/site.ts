@@ -241,3 +241,56 @@ export const plates = [
   { id: "origin", index: "04", label: "Origin" },
   { id: "correspondence", index: "05", label: "Dispatch" },
 ] as const;
+
+export const caseStudies = {
+  "la-haus": {
+    slug: "la-haus",
+    plate: "02.1 / Case",
+    company: "La Haus",
+    role: "AI Full Stack Software Engineer",
+    period: "2025 — Present",
+    place: "Cali, Colombia",
+    title: "Production AI on the survey line",
+    lead:
+      "A case plate for the systems behind enterprise search, multi-agent automation, and LLM features shipped to production at La Haus.",
+    image: {
+      src: "/images/signal-lattice.png",
+      alt: "Abstract neural constellation lattice with copper and mint connections.",
+    },
+    problem: {
+      heading: "Problem",
+      body:
+        "Operational teams still ran manual knowledge lookup and workflow steps that did not scale with product demand. Enterprise search and automation needed reliable LLM systems in production — not demos — with measurable impact on efficiency, latency, and cost.",
+    },
+    system: {
+      heading: "System",
+      body:
+        "Architected, deployed, and monitored production AI using GPT-4, FastAPI, Next.js, TypeScript, and GCP. Designed RAG knowledge systems and multi-agent workflows with embeddings, LangChain, LangGraph, and Pinecone, with supervised fine-tuning where it earned its keep. Backend traffic ran on Go, FastAPI, Node.js, and PostgreSQL with caching, prompt optimization, and streaming.",
+      stack: [
+        "GPT-4",
+        "FastAPI",
+        "Next.js",
+        "TypeScript",
+        "GCP",
+        "LangChain",
+        "LangGraph",
+        "Pinecone",
+        "Go",
+        "PostgreSQL",
+      ],
+    },
+    outcomes: {
+      heading: "Outcome",
+      items: [
+        { value: "10k+", label: "Monthly active users on production AI systems" },
+        { value: "~60%", label: "Operational efficiency gained by removing manual workflows" },
+        { value: "~40%", label: "Latency reduced through cache, stream, and prompt work" },
+        { value: "~35%", label: "Infrastructure cost lowered after architecture passes" },
+      ],
+    },
+    backHref: "/#deployments",
+    backLabel: "Return to Deployments",
+  },
+} as const;
+
+export type CaseSlug = keyof typeof caseStudies;

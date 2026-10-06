@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
 import { plates } from "@/content/site";
 import { useActivePlate, type PlateId } from "@/hooks/useActivePlate";
 
@@ -18,10 +19,13 @@ function RegistrationMarks() {
 }
 
 export function AtlasChrome() {
-  const { active, setActive } = useActivePlate();
+  const pathname = usePathname();
+  const onHome = pathname === "/";
+  const { active, setActive } = useActivePlate(onHome);
   const stripRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
+    if (!onHome) return;
     const current = stripRef.current?.querySelector<HTMLElement>(`[data-plate="${active}"]`);
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     current?.scrollIntoView({
@@ -29,15 +33,13 @@ export function AtlasChrome() {
       block: "nearest",
       behavior: reduced ? "auto" : "smooth",
     });
-  }, [active]);
+  }, [active, onHome]);
 
-  const select = (id: PlateId) => {
-    setActive(id);
-  };
+  const plateHref = (id: PlateId) => (onHome ? `#${id}` : `/#${id}`);
 
   return (
     <>
-      <a href="#cover" className="skip-link">
+      <a href={plateHref("cover")} className="skip-link">
         Skip to cover
       </a>
       <RegistrationMarks />
@@ -50,14 +52,16 @@ export function AtlasChrome() {
         <p className="kicker mr-4 hidden shrink-0 text-copper sm:block">Atlas</p>
         <ol className="atlas-strip flex min-w-0 flex-1 gap-1 overflow-x-auto">
           {plates.map((plate) => {
-            const isActive = active === plate.id;
+            const isActive = onHome && active === plate.id;
             return (
               <li key={plate.id} className="shrink-0">
                 <a
-                  href={`#${plate.id}`}
+                  href={plateHref(plate.id)}
                   data-plate={plate.id}
                   aria-current={isActive ? "location" : undefined}
-                  onClick={() => select(plate.id)}
+                  onClick={() => {
+                    if (onHome) setActive(plate.id);
+                  }}
                   className={`inline-flex items-center gap-2 px-2.5 py-1.5 font-mono text-[10px] tracking-[0.18em] uppercase no-underline transition-colors ${
                     isActive ? "bg-paper/8 text-paper" : "text-fog hover:text-paper"
                   }`}
@@ -76,16 +80,18 @@ export function AtlasChrome() {
         className="pointer-events-none fixed top-1/2 right-[var(--frame)] z-30 hidden w-[9.5rem] -translate-y-1/2 lg:block"
       >
         <div className="pointer-events-auto border-l border-rule pl-4">
-          <p className="kicker mb-4 text-copper">Index</p>
+          <p className="kicker mb-4 text-copper">{onHome ? "Index" : "Atlas"}</p>
           <ol className="flex flex-col gap-2.5">
             {plates.map((plate) => {
-              const isActive = active === plate.id;
+              const isActive = onHome && active === plate.id;
               return (
                 <li key={plate.id}>
                   <a
-                    href={`#${plate.id}`}
+                    href={plateHref(plate.id)}
                     aria-current={isActive ? "location" : undefined}
-                    onClick={() => select(plate.id)}
+                    onClick={() => {
+                      if (onHome) setActive(plate.id);
+                    }}
                     className={`group flex items-baseline gap-3 no-underline transition-colors ${
                       isActive ? "text-paper" : "text-fog hover:text-paper"
                     }`}

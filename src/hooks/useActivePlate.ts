@@ -5,10 +5,12 @@ import { plates } from "@/content/site";
 
 export type PlateId = (typeof plates)[number]["id"];
 
-export function useActivePlate() {
+export function useActivePlate(enabled = true) {
   const [active, setActive] = useState<PlateId>(plates[0].id);
 
   useEffect(() => {
+    if (!enabled) return;
+
     const fromHash = window.location.hash.replace("#", "") as PlateId;
     if (plates.some((plate) => plate.id === fromHash)) {
       setActive(fromHash);
@@ -17,6 +19,8 @@ export function useActivePlate() {
     const nodes = plates
       .map((plate) => document.getElementById(plate.id))
       .filter((node): node is HTMLElement => Boolean(node));
+
+    if (nodes.length === 0) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -35,7 +39,7 @@ export function useActivePlate() {
 
     nodes.forEach((node) => observer.observe(node));
     return () => observer.disconnect();
-  }, []);
+  }, [enabled]);
 
   return { active, setActive };
 }
