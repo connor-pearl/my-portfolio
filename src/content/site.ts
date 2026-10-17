@@ -291,6 +291,89 @@ export const caseStudies = {
     backHref: "/#deployments",
     backLabel: "Return to Deployments",
   },
+  psl: {
+    slug: "psl",
+    plate: "02.2 / Case",
+    company: "PSL Corp",
+    role: "Senior Full Stack Software Engineer",
+    period: "2022 — 2025",
+    place: "Cali, Colombia",
+    title: "SaaS platforms on the prior station",
+    lead:
+      "A case plate for enterprise SaaS, GraphQL APIs, real-time analytics, and delivery practices built at PSL Corp.",
+    image: {
+      src: "/images/copper-traces.png",
+      alt: "Abstract copper circuit traces on a dark survey field.",
+    },
+    problem: {
+      heading: "Problem",
+      body:
+        "Enterprise SaaS products needed performant frontends, scalable backend services, and reliable delivery across teams. Platform features and third-party integrations required REST and GraphQL APIs that could hold under operational load, with analytics that made large-scale data usable.",
+    },
+    system: {
+      heading: "System",
+      body:
+        "Led development of enterprise SaaS applications with React, Next.js, Node.js, Express, and PostgreSQL. Designed REST and GraphQL APIs for core platform features and integrations. Built real-time analytics for large-scale operational data. Introduced CI/CD, automated testing, and engineering practices that improved deployment reliability, and mentored junior engineers through cross-functional delivery.",
+      stack: [
+        "React",
+        "Next.js",
+        "Node.js",
+        "Express",
+        "PostgreSQL",
+        "GraphQL",
+        "MySQL",
+        "CI/CD",
+      ],
+    },
+    outcomes: {
+      heading: "Outcome",
+      items: [
+        { value: "~30%", label: "Production performance gained through database and backend passes" },
+        { value: "API", label: "REST and GraphQL surfaces for platform and third-party work" },
+        { value: "Live", label: "Real-time analytics for large-scale operational data" },
+        { value: "CI/CD", label: "Pipelines, testing, and practices that steadied releases" },
+      ],
+    },
+    backHref: "/#deployments",
+    backLabel: "Return to Deployments",
+  },
+  evervault: {
+    slug: "evervault",
+    plate: "02.3 / Case",
+    company: "Evervault",
+    role: "Software Engineer",
+    period: "2018 — 2022",
+    place: "Dublin, Ireland",
+    title: "Payment systems at the origin station",
+    lead:
+      "A case plate for full-stack applications, payment workflow APIs, and reliability work shipped from Dublin at Evervault.",
+    image: {
+      src: "/images/andes-geometry.png",
+      alt: "Abstract Andean geometric field in copper and ink.",
+    },
+    problem: {
+      heading: "Problem",
+      body:
+        "Internal and customer-facing systems needed reliable full-stack applications and APIs that could support payment workflows and enterprise integrations. Reliability depended on monitoring, testing, and debugging that kept services stable as the product surface grew.",
+    },
+    system: {
+      heading: "System",
+      body:
+        "Developed full-stack applications with Python (Django, Flask), Node.js, and React for internal and customer-facing systems. Built and maintained APIs for payment workflows and enterprise integrations. Strengthened reliability through monitoring, testing, and debugging, and contributed performance improvements across frontend and backend while collaborating in Agile teams with product, design, and engineering.",
+      stack: ["Python", "Django", "Flask", "Node.js", "React"],
+    },
+    outcomes: {
+      heading: "Outcome",
+      items: [
+        { value: "Pay", label: "APIs supporting payment workflows and enterprise integrations" },
+        { value: "Full", label: "Stack delivery across Python, Node.js, and React systems" },
+        { value: "Ops", label: "Reliability gains from monitoring, testing, and debugging" },
+        { value: "Team", label: "Agile delivery with product, design, and engineering" },
+      ],
+    },
+    backHref: "/#deployments",
+    backLabel: "Return to Deployments",
+  },
 } as const;
 
 export type CaseSlug = keyof typeof caseStudies;

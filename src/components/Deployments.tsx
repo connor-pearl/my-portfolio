@@ -1,4 +1,4 @@
-import { deploymentsIntro, experience } from "@/content/site";
+import { caseStudies, deploymentsIntro, experience } from "@/content/site";
 
 export function Deployments() {
   return (
@@ -90,9 +90,9 @@ export function Deployments() {
                       ))}
                     </ul>
                   </div>
-                  {job.id === "la-haus" ? (
+                  {job.id in caseStudies ? (
                     <a
-                      href="/work/la-haus"
+                      href={`/work/${job.id}`}
                       className="shrink-0 border border-copper px-3 py-2 font-mono text-[10px] tracking-[0.2em] text-copper uppercase no-underline hover:bg-copper hover:text-ink"
                     >
                       Open case plate →
