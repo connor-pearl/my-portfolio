@@ -129,6 +129,9 @@ export const experience = [
   },
 ] as const;
 
+export const instrumentationIntro =
+  "Classified the way a map legend is classified: by system, not by buzzword. Filter by key or search the working stack." as const;
+
 export const skillGroups = [
   {
     id: "ai",

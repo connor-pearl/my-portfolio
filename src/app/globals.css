@@ -326,6 +326,14 @@ a {
   );
 }
 
+.legend-band:first-child {
+  border-top-color: var(--color-rule-strong);
+}
+
+.instrumentation-lattice img {
+  transform: scale(1.04);
+}
+
 @keyframes dash {
   0% {
     stroke-dashoffset: 420;
